@@ -10,10 +10,12 @@ app.listen(3000, async () => {
   console.log("mongodb connected");
   
   const tweetRepo = new TweetRepository();
+const tweet=await tweetRepo.create({content:"With hooks"});
+console.log(tweet);
 
-const tweet =await tweetRepo.getAll(0,4);
+// const tweet =await tweetRepo.getAll(0,4);
 
-console.log(tweet[0].contentWithEmail);
+// console.log(tweet[0].contentWithEmail);
   
 });
 
