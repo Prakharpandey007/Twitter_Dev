@@ -1,33 +1,23 @@
-const mongoose=require('mongoose');
+const mongoose = require("mongoose");
 
-const tweetSchema=new mongoose.Schema({
-    content:{
-        type:String,
-        required:true,
-
+const tweetSchema = new mongoose.Schema(
+  {
+    content: {
+      type: String,
+      required: true,
+      max: [250, "Tweet can not be more than 250 characters"], //comment will not be more than 250 words.
     },
-    user:{
-        type:String
+    //every tweet has some hashtag -build seprate model for it (showw all the post with this hashtags)
 
-    },
-    comments:[
-        {
-           type:mongoose.Schema.Types.ObjectId,
-           ref:'Comment'
-        }
-    ]
-},{timestamps:true});
-tweetSchema.virtual('contentWithEmail').get(function process(){
-    return `${this.content} \nCreated by:${this. userEmail}`;
+    hashtags: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Hashtag",
+      },
+    ],
+  },
+  { timestamps: true } //timestamp add two properties created at and updated at
+);
 
-})
-tweetSchema.pre('save',function(next){
-    console.log('Inside a hook');
-    this.content=this.content+'....';   //attach a 
-
-    next();
-})
-const Tweet=mongoose.model('Tweet',tweetSchema);
-module.exports=Tweet;
-
-
+const Tweet = mongoose.model("Tweet", tweetSchema);
+module.exports = Tweet;
