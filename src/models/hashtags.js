@@ -4,11 +4,13 @@ title:{
     type:String,
     required:true
 },
+
 //what all tweet belonging to this hashtags
 
 tweets:[
     {
-        type:mongoose.Schema.Types.ObjectId,   //store tweet id 
+        type:mongoose.Schema.Types.ObjectId,     
+        //store tweet id 
         ref:'Tweet'
     }
 ]
