@@ -9,12 +9,7 @@ const tweetSchema = new mongoose.Schema(
     },
     //every tweet has some hashtag -build seprate model for it (showw all the post with this hashtags)
 
-    hashtags: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Hashtag",
-      },
-    ],
+    
   },
   { timestamps: true } //timestamp add two properties created at and updated at
 );
