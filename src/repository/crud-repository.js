@@ -1,3 +1,4 @@
+import Tweet from "../models/tweet.js";
 class CrudRepository {
   constructor(model) {
     this.model = model;
@@ -29,7 +30,7 @@ class CrudRepository {
       throw error;
     }
   }
-  async getAll(id) {
+  async getAll() {
     try {
       const result = await this.model.find({});
       return result;

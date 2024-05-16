@@ -8,7 +8,13 @@ const tweetSchema = new mongoose.Schema(
       max: [250, "Tweet can not be more than 250 characters"], //comment will not be more than 250 words.
     },
     //every tweet has some hashtag -build seprate model for it (showw all the post with this hashtags)
-
+likes:[
+  {
+    type:mongoose.Schema.Types.ObjectId,
+    ref:'Like'
+  }
+  
+]
     
   },
   { timestamps: true } //timestamp add two properties created at and updated at
