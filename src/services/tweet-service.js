@@ -7,9 +7,10 @@ class TweetService {
   }
   async create(data) {
     const content = data.content;
-    const tags = content.match(/#[a-zA-Z0-9]+/g)
-    .map((tag) => tag.substring(1))
-    .map(tag =>tag.toLowerCase()); //this regex extracts hashtags
+    const tags = content
+      .match(/#[a-zA-Z0-9]+/g)
+      .map((tag) => tag.substring(1))
+      .map((tag) => tag.toLowerCase()); //this regex extracts hashtags
 
     const tweet = await this.tweetRepository.create(data);
 
@@ -30,6 +31,9 @@ class TweetService {
       tag.save();
     });
     return tweet;
+
+
+    
     // [{title:'coding' ,tweets:[]}]
     //todo create hastags and add here
     /**
@@ -40,7 +44,7 @@ class TweetService {
      */
   }
 }
-export default  TweetService;
+export default TweetService;
 
 /*
 this is my #first #tweet and I am really #excited
