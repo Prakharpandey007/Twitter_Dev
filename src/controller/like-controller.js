@@ -14,7 +14,7 @@ try {
     res.status(500).json({
         success:false,
         data:{},
-        message:"something went wrong",
+        message:"something went wrong in like controller ",
         err:error
     })
 }

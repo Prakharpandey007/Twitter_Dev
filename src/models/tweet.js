@@ -14,6 +14,12 @@ likes:[
     ref:'Like'
   }
   
+],
+comments:[
+  {
+    type:mongoose.Schema.Types.ObjectId,
+    ref:'Comment'
+  }
 ]
     
   },

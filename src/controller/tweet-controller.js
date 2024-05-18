@@ -12,9 +12,30 @@ export const createTweet=async(req,res)=>{
     } catch (error) {
         return res.status(500).json({
             success:false,
-            message:'something went wrong in controller',
+            message:'something went wrong in tweet controller',
             data:{},
             err:error
         });
 }
+
+}
+
+export const getTweet=async(req,res)=>{
+    try {
+        const response =await tweetservice.get(req.params.id);
+        return res.status(200).json({
+            success:true,
+            message:'successfully created a new tweet',
+            data:response,
+            err:{}
+        })
+    } catch (error) {
+        return res.status(500).json({
+            success:false,
+            message:'something went wrong in tweet controller in get fn ',
+            data:{},
+            err:error
+        });
+}
+
 }
