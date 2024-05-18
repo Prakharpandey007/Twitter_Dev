@@ -5,9 +5,12 @@ class LikeService {
     this.likeRepository = new LikeRepository();
     this.tweetRepository = new TweetRepository();
   }
-  async togglelike(modelId, modelType, userId) {
+  async toggleLike(modelId, modelType, userId) {
+    console.log(modelId,modelType,userId);
     ///  /api/v1/likes/toggle?id=modelid&type=tweet
-    if (modelType == "Tweet ") {
+   
+
+    if (modelType=="Tweet") {
       var likeable = await this.tweetRepository.find(modelId);
     } else if (modelType == "Comment") {
       //TODO
@@ -16,15 +19,17 @@ class LikeService {
       throw new Error("unknown model type");
     }
     //Now we check use have like a tweet or not 
-    const exists = await this.likeRepository.findByUserAndLikeable({    
+    const exists = await this.likeRepository.findByUserAndLikeable({   
+    
       user: userId,
       onModel: modelType,
       likeable: modelId,
     });
+    console.log(exists);
     if (exists) {
       likeable.likes.pull(exists.id);
       await likeable.save();
-      await exists.remove();   
+      await exists.deleteOne();  
 
       //for remove the like.
       var isAdded=false;
