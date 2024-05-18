@@ -1,24 +1,31 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
-const commentSchema=new mongoose.Schema({
-    content:{
-        type:String,
+const commentSchema = new mongoose.Schema(
+  {
+    content: {
+      type: String,
+      required: true,
+    },
+    userId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
+    onModel: {
+      type: String,
+      required: true,
+      enum: ["Tweet", "Comment"],
+    },
+    commentable:{
+        type:mongoose.Schema.Types.ObjectId,
         required:true,
+        refPath:'onModel'
+    }
+  },
+  
+  { timestamps: true }
+);
 
-    },
-    userEmail:{
-        type:String
-    },
-    // comments:[
-    //     {
-    //         content:{
-    //             type:String,
-    //             require:true
-    //         }
-    //     }
-    // ]
-},{timestamps:true});
-
- const Comment=mongoose.model('Comment',commentSchema);
+const Comment = mongoose.model("Comment", commentSchema);
 
 export default Comment;
