@@ -5,10 +5,8 @@ class CrudRepository {
   }
   async create(data) {
     try {
-      
       const result = await this.model.create(data);
       return result;
-      
     } catch (error) {
       console.log(error);
       console.log("something went wrong in crud repo create fn");
@@ -44,7 +42,9 @@ class CrudRepository {
   }
   async update(id, data) {
     try {
-      const result = await this.model.findByIdandUpdate(id, data,{new:true});   //new true will give the updated document of findById
+      const result = await this.model.findByIdandUpdate(id, data, {
+        new: true,
+      }); //new true will give the updated document of findById
       return result;
     } catch (error) {
       console.log("something went wrong in crud repo update fn");
@@ -53,4 +53,3 @@ class CrudRepository {
   }
 }
 export default CrudRepository;
-
