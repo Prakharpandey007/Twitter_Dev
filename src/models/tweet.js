@@ -20,7 +20,10 @@ comments:[
     type:mongoose.Schema.Types.ObjectId,
     ref:'Comment'
   }
-]
+],
+image:{
+  type:String
+}
     
   },
   { timestamps: true } //timestamp add two properties created at and updated at
