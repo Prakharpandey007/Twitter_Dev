@@ -29,7 +29,7 @@ class CrudRepository {
     } catch (error) {
       console.log("something went wrong in crud repo get fn");
       throw error;
-    }
+    } 
   }
   async getAll() {
     try {

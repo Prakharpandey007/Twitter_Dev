@@ -21,9 +21,10 @@ class UserService {
       return user;
     } catch (error) {
       console.log(error);
-      throw error;
       console.log("something went wrong in user-service");
     }
+      throw error;
+     
   }
   async signin(data) {
     try {
