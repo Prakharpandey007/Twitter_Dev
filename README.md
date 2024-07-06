@@ -22,17 +22,17 @@ Twitter_Dev_Backend
  - POST /api/auth/login: Authenticate and login a user, returning a JWT token.
    
  ### Tweets
- - GET /api/tweets: Retrieve all tweets.
- - POST /api/tweets: Create a new tweet.
+ - GET /api/tweets/: Retrieve all tweets.
+ - POST /api/tweets/: Create a new tweet.
  - GET /api/tweets/ : Retrieve a specific tweet by ID.
  - PUT /api/tweets/ : Update a tweet by ID.
  - DELETE /api/tweets/ : Delete a tweet by ID.
 
   ### Comments
-  - GET /api/tweets//comments: Retrieve all comments for a tweet.
-  - POST /api/tweets/comments: Add a new comment to a tweet.
-  -  PUT /api/tweets/comments: Update a comment for a tweet.
-  -  DELETE /api/tweets/comments : Delete a comment for a tweet.
+  - GET /api/tweets//comments/: Retrieve all comments for a tweet.
+  - POST /api/tweets/comments/: Add a new comment to a tweet.
+  -  PUT /api/tweets/comments/: Update a comment for a tweet.
+  -  DELETE /api/tweets/comments/: Delete a comment for a tweet.
 
   ### Likes
  - POST /api/tweets/like: Like a tweet.
@@ -76,7 +76,7 @@ AWS_REGION=your_aws_region
 Contributions are welcome! If you'd like to contribute to Twitter_Dev Backend, please follow these steps:
 
 - Fork the repository.
-- Create a new branch (git checkout -b add-new-feature).
+- Create a new branch (git checkout -b  add-new-feature).
 - Make your changes.
 - Commit your changes (git commit -m 'Add new feature').
 - Push to the branch (git push origin add-new-feature).
