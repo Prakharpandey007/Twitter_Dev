@@ -3,7 +3,7 @@ Twitter_Dev Backend is a Node.js application built with Express, MongoDB, Passpo
 #### AWS-S3 
 Amazon Web Services(S3) is a Cloud Service used for Uploading the images of the Post created by the authenticated user. 
 ### Passport.Js
- Passport is authentication middleware for Node.js used for different types of Authentication.
+ Passport is authentication middleware for Node.js.
  
 ## Project Structure
 ```
