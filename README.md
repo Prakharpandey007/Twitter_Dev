@@ -1,6 +1,10 @@
 # Twitter-Dev
-Twitter_Dev Backend is a Node.js application built with Express, MongoDB, Passport.js, JWT, and AWS SDK. It follows the MVC architecture, consisting of controllers, middleware, models, and routes to implement CRUD operations for authentication, comments, likes, and tweets.
-
+Twitter_Dev Backend is a Node.js application built with Express, MongoDB, Passport.js, JWT, and AWS-S3. It follows the MVC architecture, consisting of controllers, middleware, models, and routes to implement CRUD operations for authentication, comments, likes, and tweets.
+#### AWS-S3 
+Amazon Web Services(S3) is a Cloud Service used for Uploading the images of the Post created by the authenticated user. 
+### Passport.Js
+ Passport is authentication middleware for Node.js used for different types of Authentication.
+ 
 ## Project Structure
 ```
 Twitter_Dev_Backend
@@ -72,14 +76,14 @@ AWS_REGION=your_aws_region
 Contributions are welcome! If you'd like to contribute to Twitter_Dev Backend, please follow these steps:
 
 - Fork the repository.
-- Create a new branch (git checkout -b feature/add-new-feature).
+- Create a new branch (git checkout -b add-new-feature).
 - Make your changes.
-- Commit your changes (git commit -am 'Add new feature').
-- Push to the branch (git push origin feature/add-new-feature).
+- Commit your changes (git commit -m 'Add new feature').
+- Push to the branch (git push origin add-new-feature).
 - Create a new Pull Request.
 
-##License
-This project is licensed under the MIT License - see the LICENSE file for details.
+## License
+ This project is licensed under the MIT License - see the LICENSE file for details.
 
 
 
