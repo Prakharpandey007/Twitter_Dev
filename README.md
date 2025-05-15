@@ -9,7 +9,8 @@ Amazon Web Services(S3) is a Cloud Service used for Uploading the images of the 
 ```
 Twitter_Dev_Backend
 ├── config              # Configuration files (e.g., database, passport configuration)
-├── controllers         # Controllers for handling business logic
+├── controllers         # Controllers for handling HTTP Requests.
+├── services            # Services for handling business logic
 ├── middleware          # Custom middleware functions
 ├── models              # Mongoose models for MongoDB
 ├── routes              # Route definitions
