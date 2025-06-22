@@ -6,11 +6,9 @@ class TweetService {
     this.hashtagrepository = new HashtagRepository();
   }
   async create(data) {
-    const content = data.content;
-    const tags = (content
-      .match(/#[a-zA-Z0-9]+/g)|| [])   //if no hashtags in comment then it will return null;
+    const content = data.content || "";
+    const tags = (content.match(/#[a-zA-Z0-9]+/g) || []) //if no hashtags in comment then it will return null;
       .map((tag) => tag.substring(1).toLowerCase());
-      
 
     const tweet = await this.tweetRepository.create(data);
 
@@ -21,7 +19,7 @@ class TweetService {
     newTags = newTags.map((tag) => {
       return {
         title: tag,
-        tweets: [tweet.id],
+        tweets: [tweet._id],
       };
     });
 
@@ -32,8 +30,6 @@ class TweetService {
     });
     return tweet;
 
-
-    
     // [{title:'coding' ,tweets:[]}]
     //todo create hastags and add here
     /**
@@ -43,8 +39,8 @@ class TweetService {
      * 4
      */
   }
-  async get(tweetId){
-    const tweet=await this.tweetRepository.getWithComments(tweetId);
+  async get(tweetId) {
+    const tweet = await this.tweetRepository.getWithComments(tweetId);
     return tweet;
   }
 }
