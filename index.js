@@ -21,7 +21,7 @@ app.use(passport.initialize());
 passportAuth(passport);
 
 // Health check route
-app.get("/health-check", (req, res) => {
+app.get("/api/health-check", (req, res) => {
   res.status(200).json({
     status: "OK",
     uptime: process.uptime(),
