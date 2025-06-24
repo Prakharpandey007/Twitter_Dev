@@ -1,7 +1,12 @@
 # Twitter-Dev
-Twitter_Dev Backend is a Node.js application built with Express, MongoDB, Passport.js, JWT, and AWS-S3. It follows the MVC architecture, consisting of controllers, middleware, models, and routes to implement CRUD operations for authentication, comments, likes, and tweets.
-#### AWS-S3 
-Amazon Web Services(S3) is a Cloud Service used for Uploading the images of the Post created by the authenticated user. 
+Twitter_Dev Backend is a Node.js application built using Express, MongoDB, Passport.js, JWT, and AWS S3. It follows the MVC architecture, with clearly defined controllers, middleware, models, and routes to handle CRUD operations for authentication, comments, likes, and tweets. The project is deployed on AWS EC2 using GitHub Actions for CI/CD automation.
+
+### AWS-EC2
+Amazon Elastic Compute Cloud (EC2) is a web service offered by Amazon Web Services (AWS) that provides resizable compute capacity in the cloud. It allows users to rent virtual machines (instances) to run their applications.
+### AWS-S3 
+Amazon Web Services(S3) is a Cloud Service used for Uploading the images of the Post created by the authenticated user.
+### Github-Actions
+GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline.
 ### Passport.Js
  Passport is authentication middleware for Node.js.
  
